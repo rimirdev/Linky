@@ -55,7 +55,7 @@ class LinkAdapter : ListAdapter<Link, RecyclerView.ViewHolder>(LinkDiffCallback(
 
             val url = URL(link.url)
             val host: String = url.getHost()
-            Log.d("rimir2", "bind: " + host)
+
             when (host) {
                 "www.youtube.com" -> binding.linkImage.setImageResource(R.drawable.ic_youtube)
                 "youtu.be" -> binding.linkImage.setImageResource(R.drawable.ic_youtube)

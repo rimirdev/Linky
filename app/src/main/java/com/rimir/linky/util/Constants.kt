@@ -16,3 +16,6 @@ var fileExtensions: List<String> =
 
 var fileMedia: List<String> =
     Arrays.asList(".mp4", ".mov", ".wmv" ,".avi", ".flv", ".mkv")
+
+var webMedia: List<String> =
+Arrays.asList("www.youtube.com", "youtu.be")

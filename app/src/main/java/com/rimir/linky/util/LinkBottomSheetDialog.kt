@@ -5,12 +5,15 @@ import android.content.ActivityNotFoundException
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rimir.linky.R
 import com.rimir.linky.data.Link
 import com.rimir.linky.databinding.BottomSheetDialogBinding
+import java.net.URL
 
 object LinkBottomSheetDialog {
 
@@ -38,10 +41,11 @@ object LinkBottomSheetDialog {
 
         dialogBinding.previewLink.setOnClickListener {
 
-            if (fileExtensions.contains(URLSUtils.getExtension(link.url).lowercase()))
-                PreviewBottomSheetDialog.launch(activity, link, true, false)
-            else
-                PreviewBottomSheetDialog.launch(activity, link, false, false)
+            if (fileExtensions.contains(
+                    URLSUtils.getExtension(link.url).lowercase()
+                )
+            ) PreviewBottomSheetDialog.launch(activity, link, true, false)
+            else PreviewBottomSheetDialog.launch(activity, link, false, false)
 
         }
 
@@ -52,12 +56,37 @@ object LinkBottomSheetDialog {
 
         dialogBinding.downloadLink.setOnClickListener {
 
-            if (fileExtensions.contains(URLSUtils.getExtension(link.url).lowercase()))
-                PreviewBottomSheetDialog.launch(activity, link, true, true)
-            else
-                PreviewBottomSheetDialog.launch(activity, link, false, true)
+            if (fileExtensions.contains(
+                    URLSUtils.getExtension(link.url).lowercase()
+                )
+            ) PreviewBottomSheetDialog.launch(activity, link, true, true)
+            else PreviewBottomSheetDialog.launch(activity, link, false, true)
 
         }
+
+        // Stream media file
+        val url = URL(link.url)
+        val host: String = url.getHost()
+
+        if (fileMedia.contains(URLSUtils.getExtension(link.url).lowercase())) {
+            dialogBinding.downloadLink.visibility = View.VISIBLE
+            dialogBinding.playLink.visibility = View.VISIBLE
+            dialogBinding.playLink.setOnClickListener {
+
+            }
+        } else if (webMedia.contains(host)) {
+
+            dialogBinding.playLink.visibility = View.VISIBLE
+            dialogBinding.playLink.setOnClickListener {
+                YoutubeBottomSheetDialog.launch(activity, link)
+            }
+
+        } else {
+
+            dialogBinding.playLink.visibility = View.GONE
+
+        }
+
 
         dialogBinding.dialogCopyAction.setOnClickListener {
             val clipboard = activity.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager

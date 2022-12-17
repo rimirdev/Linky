@@ -107,4 +107,7 @@ dependencies {
 
     //adblocker webview
     implementation 'com.github.islamdidarmd:AdBlockerWebview:0.1.3'
+
+    //For youtube Url
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
 }
