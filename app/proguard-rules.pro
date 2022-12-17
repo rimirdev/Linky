@@ -1,0 +1,2 @@
+-keep class * extends androidx.fragment.app.Fragment{}
+-keepnames class * extends android.os.Parcelable

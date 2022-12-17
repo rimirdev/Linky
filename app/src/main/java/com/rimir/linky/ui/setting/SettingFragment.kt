@@ -1,0 +1,87 @@
+package com.rimir.linky.ui.setting
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.rimir.linky.BuildConfig
+import com.rimir.linky.R
+import com.rimir.linky.data.Theme
+import com.rimir.linky.databinding.FragmentSettingBinding
+import com.rimir.linky.util.*
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+
+@AndroidEntryPoint
+class SettingFragment : Fragment() {
+
+    private var _binding : FragmentSettingBinding? = null
+    private val binding get() = _binding!!
+    @Inject lateinit var settingUtils: SettingUtils
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentSettingBinding.inflate(inflater, container, false)
+
+        setupUiInformation()
+        setupListeners()
+
+        return binding.root
+    }
+
+    private fun setupUiInformation() {
+        binding.versionTxt.text = getString(R.string.version, BuildConfig.VERSION_NAME)
+
+        // Setup Theme Switch
+        val theme = settingUtils.getThemeType()
+        binding.themeSwitch.isChecked = theme == Theme.DARK
+
+        val showCounter = settingUtils.getEnableClickCounter()
+        binding.showCounterSwitch.isChecked = showCounter
+    }
+
+    private fun setupListeners() {
+        binding.sourceCodeTxt.setOnClickListener {
+            openLinkIntent(requireContext(), REPOSITORY_URL)
+        }
+
+        binding.importExportTxt.setOnClickListener {
+            findNavController().navigate(R.id.action_settingFragment_to_importExportFragment)
+        }
+
+        binding.contributorsTxt.setOnClickListener {
+            openLinkIntent(requireContext(), REPOSITORY_CONTRIBUTORS_URL)
+        }
+
+        binding.issuesTxt.setOnClickListener {
+            openLinkIntent(requireContext(), REPOSITORY_ISSUES_URL)
+        }
+
+        binding.shareTxt.setOnClickListener {
+            shareTextIntent(requireContext(), PLAY_STORE_URL)
+        }
+
+        binding.themeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            val themeMode = if (isChecked) AppCompatDelegate.MODE_NIGHT_YES
+                else AppCompatDelegate.MODE_NIGHT_NO
+            AppCompatDelegate.setDefaultNightMode(themeMode)
+
+            val theme = if (isChecked) Theme.DARK else Theme.WHITE
+            settingUtils.setThemeType(theme)
+        }
+
+        binding.showCounterSwitch.setOnCheckedChangeListener { _, isChecked ->
+            settingUtils.setEnableClickCounter(isChecked)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}

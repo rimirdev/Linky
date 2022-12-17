@@ -1,0 +1,28 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Create Link Shortcut-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_folders"
+        android:shortcutId="create_folder"
+        android:shortcutLongLabel="@string/folder_create"
+        android:shortcutShortLabel="@string/folder_create">
+        <intent
+            android:action="com.rimir.linky.action.create_folder"
+            android:targetClass="com.rimir.linky.ui.MainActivity"
+            android:targetPackage="com.rimir.linky" />
+    </shortcut>
+
+    <!--Create Folder Shortcut-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_link"
+        android:shortcutId="create_link"
+        android:shortcutLongLabel="@string/link_create"
+        android:shortcutShortLabel="@string/link_create">
+        <intent
+            android:action="com.rimir.linky.action.create_link"
+            android:targetClass="com.rimir.linky.ui.MainActivity"
+            android:targetPackage="com.rimir.linky" />
+    </shortcut>
+</shortcuts>

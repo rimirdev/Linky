@@ -1,0 +1,2 @@
+rootProject.name = "Linky"
+include ':app'
