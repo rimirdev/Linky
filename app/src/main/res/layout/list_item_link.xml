@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dimen10dp"
-    app:cardCornerRadius="@dimen/dimen12sp"
-    app:cardElevation="6dp"
-    app:elevation="@dimen/dimen2dp">
+    android:clickable="true"
+
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen5dp">
+        android:background="?selectableItemBackground"
+        android:layout_marginHorizontal="@dimen/dimen10dp">
 
         <ImageView
             android:id="@+id/link_image"
@@ -33,6 +33,7 @@
             android:fontFamily="@font/open_sans"
             android:gravity="center_vertical|start"
             android:lines="1"
+            android:textSize="16sp"
             android:textStyle="bold"
             tools:text="Youtube talk" />
 
@@ -45,6 +46,7 @@
             android:layout_toStartOf="@id/link_click_count"
             android:layout_toEndOf="@id/link_image"
             android:lines="1"
+            android:textSize="@dimen/dimen12sp"
             android:padding="@dimen/dimen2dp"
             tools:text="Youtube talk subtitle" />
 
@@ -55,10 +57,10 @@
             android:layout_below="@id/link_pin_img"
             android:layout_alignParentEnd="true"
             android:fontFamily="@font/open_sans"
+            android:textColor="@color/grey"
             android:gravity="center"
             android:padding="@dimen/dimen1dp"
             android:textSize="@dimen/dimen12sp"
-            app:drawableEndCompat="@drawable/ic_click"
             tools:text="12" />
 
         <ImageView
@@ -71,4 +73,12 @@
             android:padding="@dimen/dimen2dp"
             android:src="@drawable/ic_pinned" />
     </RelativeLayout>
-</com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="@dimen/dimen5dp"
+        android:background="@color/grey"></View>
+</LinearLayout>
+
+

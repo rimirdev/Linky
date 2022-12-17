@@ -3,6 +3,8 @@ package com.rimir.linky.ui
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.bundleOf
@@ -18,10 +20,13 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    @Inject lateinit var settingUtils: SettingUtils
+    @Inject
+    lateinit var settingUtils: SettingUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
+
         setContentView(R.layout.activity_main)
 
         handleLinkHubIntent()
@@ -29,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleLinkHubIntent() {
-        when(intent.action) {
+        when (intent.action) {
             Intent.ACTION_VIEW -> return
             Intent.ACTION_SEND -> {
                 val sharedLink = intent.getStringExtra(Intent.EXTRA_TEXT)
@@ -39,9 +44,13 @@ class MainActivity : AppCompatActivity() {
             }
             Intent.ACTION_PROCESS_TEXT -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    val sharedLink = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
+                    val sharedLink =
+                        intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
                     val bundle = bundleOf("shared_link" to sharedLink)
-                    findNavHostController(R.id.nav_host_fragment).navigate(R.id.linkFragment, bundle)
+                    findNavHostController(R.id.nav_host_fragment).navigate(
+                        R.id.linkFragment,
+                        bundle
+                    )
                 }
             }
             ACTION_CREATE_LINK -> {

@@ -1,5 +1,6 @@
 package com.rimir.linky.ui.adapter
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.rimir.linky.databinding.ListItemLinkBinding
 import com.rimir.linky.util.URLSUtils
 import com.rimir.linky.util.fileExtensions
 import java.net.URL
+import java.util.*
 
 class LinkAdapter : ListAdapter<Link, RecyclerView.ViewHolder>(LinkDiffCallback()) {
 
@@ -23,7 +25,7 @@ class LinkAdapter : ListAdapter<Link, RecyclerView.ViewHolder>(LinkDiffCallback(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding =
             ListItemLinkBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return LinkViewHolder(binding)
+        return LinkViewHolder(binding, parent.context)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -48,7 +50,10 @@ class LinkAdapter : ListAdapter<Link, RecyclerView.ViewHolder>(LinkDiffCallback(
         enableClickCounter = enable
     }
 
-    inner class LinkViewHolder(private val binding: ListItemLinkBinding) :
+    inner class LinkViewHolder(
+        private val binding: ListItemLinkBinding,
+        private val context: Context
+    ) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(link: Link) {
@@ -88,14 +93,31 @@ class LinkAdapter : ListAdapter<Link, RecyclerView.ViewHolder>(LinkDiffCallback(
 
                     when (URLSUtils.getExtension(link.url)) {
                         ".pdf" -> binding.linkImage.setImageResource(R.drawable.ic_pdf_doc)
+
                         ".doc" -> binding.linkImage.setImageResource(R.drawable.ic_word_doc)
+
                         ".ppsx" -> binding.linkImage.setImageResource(R.drawable.ic_pptx_doc)
                         ".pptx" -> binding.linkImage.setImageResource(R.drawable.ic_pptx_doc)
+
                         ".zip" -> binding.linkImage.setImageResource(R.drawable.ic_zip_file)
                         ".rar" -> binding.linkImage.setImageResource(R.drawable.ic_zip_file)
+
                         ".jpg" -> binding.linkImage.setImageResource(R.drawable.ic_multi_image)
                         ".jpeg" -> binding.linkImage.setImageResource(R.drawable.ic_multi_image)
                         ".png" -> binding.linkImage.setImageResource(R.drawable.ic_multi_image)
+
+                        ".mp3" -> binding.linkImage.setImageResource(R.drawable.ic_music)
+                        ".m4a" -> binding.linkImage.setImageResource(R.drawable.ic_music)
+                        ".aac" -> binding.linkImage.setImageResource(R.drawable.ic_music)
+                        ".wav" -> binding.linkImage.setImageResource(R.drawable.ic_music)
+
+                        ".mp4" -> binding.linkImage.setImageResource(R.drawable.ic_video)
+                        ".mov" -> binding.linkImage.setImageResource(R.drawable.ic_video)
+                        ".wmv" -> binding.linkImage.setImageResource(R.drawable.ic_video)
+                        ".avi" -> binding.linkImage.setImageResource(R.drawable.ic_video)
+                        ".flv" -> binding.linkImage.setImageResource(R.drawable.ic_video)
+                        ".mkv" -> binding.linkImage.setImageResource(R.drawable.ic_video)
+                        ".m3u8" -> binding.linkImage.setImageResource(R.drawable.ic_video)
 
                         else -> { // Note the block
                             binding.linkImage.setImageResource(R.drawable.ic_internet)
@@ -106,8 +128,12 @@ class LinkAdapter : ListAdapter<Link, RecyclerView.ViewHolder>(LinkDiffCallback(
 
             binding.linkTitle.text = link.title
             binding.linkSubtitle.text = link.subtitle
-            if (enableClickCounter) binding.linkClickCount.text = link.clickedCount.toString()
-            else binding.linkClickCount.visibility = View.GONE
+            if (enableClickCounter)
+                binding.linkClickCount.text =
+                    link.clickedCount.toString() + " " + context.resources.getString(R.string.views)
+            else
+                binding.linkClickCount.visibility = View.GONE
+
             binding.linkPinImg.visibility = if (link.isPinned) View.VISIBLE else View.INVISIBLE
 
             if (::onLinkClick.isInitialized) {

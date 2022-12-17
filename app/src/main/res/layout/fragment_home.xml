@@ -24,10 +24,9 @@
                 android:layout_marginBottom="@dimen/dimen10dp"
                 android:fontFamily="@font/open_sans_titles"
                 android:padding="@dimen/dimen5dp"
-                android:text="@string/top_folders"
+                android:text="@string/folders"
                 android:textColor="@color/sky"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 tools:ignore="RelativeOverlap" />
 
             <ImageView
@@ -61,16 +60,15 @@
                 android:padding="@dimen/dimen5dp"
                 android:text="@string/links"
                 android:textColor="@color/sky"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/links_count"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_below="@id/folder_list"
-                android:layout_alignParentEnd="true"
                 android:layout_alignBottom="@+id/link_header"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/dimen5dp"
                 android:layout_marginEnd="@dimen/dimen5dp"
                 android:fontFamily="@font/open_sans"
@@ -90,7 +88,8 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/link_empty_lottie"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen200dp"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/dimen30dp"
                 android:layout_below="@id/link_header"
                 android:visibility="gone"
                 app:lottie_autoPlay="true"
@@ -104,10 +103,10 @@
                 android:layout_below="@id/link_empty_lottie"
                 android:layout_centerVertical="true"
                 android:gravity="center"
-                android:text="@string/message_links_empty"
+                android:text="@string/no_links"
                 android:textColor="@color/dark_sky"
-                android:textSize="@dimen/dimen20sp"
-                android:textStyle="bold|italic"
+                android:textSize="14sp"
+                android:textStyle="italic"
                 android:visibility="gone" />
         </RelativeLayout>
     </ScrollView>

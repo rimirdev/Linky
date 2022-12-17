@@ -89,7 +89,7 @@
     <string name="preview">Preview</string>
     <string name="download">Download</string>
     <string name="telechargement_en_cours">Downloading...</string>
-    <string name="play_media">Play media</string>
+    <string name="play_media">Play in app</string>
 
     <string name="title_player_lib">player-lib</string>
     <string name="basic_audio_player">Basic Audio Player</string>
@@ -103,4 +103,10 @@
     <string name="basic_audio_player_with_clip_loop_merge">Basic Audio Player with Clip Loop and Merge</string>
     <string name="playback_channel_name">Playback</string>
     <string name="playback_channel_description">Playback Descritpion</string>
+    <string name="no_links">No links added yet</string>
+    <string name="play_vlc">Play in VLC</string>
+    <string name="vlc_not_installed">VLC is not available</string>
+    <string name="views">views</string>
+    <string name="are_you_sure_delete">Are you sure to delete this item ?</string>
+    <string name="no">No</string>
 </resources>

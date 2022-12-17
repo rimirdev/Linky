@@ -23,6 +23,11 @@ import com.rimir.linky.ui.adapter.LinkAdapter
 import com.rimir.linky.util.*
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import android.content.DialogInterface
+
+import android.R.attr.name
+import android.app.AlertDialog
+
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -143,16 +148,33 @@ class HomeFragment : Fragment() {
             val position = holder.adapterPosition
             val link = linkAdapter.currentList[position]
             val list = linkAdapter.currentList.toMutableList()
-            list.removeAt(position)
-            linkAdapter.submitList(list)
-            homeViewModel.deleteLink(link)
 
-            activity.showSnackBar(R.string.message_link_deleted, R.string.undo) {
-                list.add(position, link)
-                linkAdapter.submitList(list)
-                linkAdapter.notifyItemInserted(position)
-                homeViewModel.insertLink(link)
-            }
+            val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
+            builder1.setMessage(context.resources.getString(R.string.are_you_sure_delete))
+            builder1.setCancelable(true)
+
+            builder1.setPositiveButton(
+                context.resources.getString(R.string.delete),
+                DialogInterface.OnClickListener { dialog, id ->
+                    list.removeAt(position)
+                    linkAdapter.submitList(list)
+                    homeViewModel.deleteLink(link)
+                    activity.showSnackBar(R.string.message_link_deleted, R.string.undo) {
+                        list.add(position, link)
+                        linkAdapter.submitList(list)
+                        linkAdapter.notifyItemInserted(position)
+                        homeViewModel.insertLink(link)
+                    }
+                })
+
+            builder1.setNegativeButton(
+                context.resources.getString(R.string.no),
+                DialogInterface.OnClickListener { dialog, id ->
+                    dialog.cancel()
+                })
+
+            val alert11: AlertDialog = builder1.create()
+            alert11.show()
         }
 
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
@@ -213,7 +235,7 @@ class HomeFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.setting_action -> {
-                findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
+                //findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
                 true
             }
             else -> super.onOptionsItemSelected(item)

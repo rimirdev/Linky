@@ -6,23 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.folder.FolderFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/dimen20dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen10dp"
             android:layout_gravity="center_vertical">
 
             <ImageView
                 android:id="@+id/folder_logo"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen200dp"
+                android:layout_height="150dp"
                 android:contentDescription="@string/link_title"
+                android:layout_marginBottom="50dp"
                 android:src="@drawable/ic_folders" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -64,5 +60,4 @@
                 app:trackTint="@color/grey" />
         </RelativeLayout>
 
-    </com.google.android.material.card.MaterialCardView>
 </ScrollView>

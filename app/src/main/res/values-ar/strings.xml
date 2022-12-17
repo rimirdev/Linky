@@ -92,4 +92,10 @@
     <string name="download">Download</string>
     <string name="telechargement_en_cours">Downloading...</string>
     <string name="play_media">Play media</string>
+    <string name="no_links">No links added yet</string>
+    <string name="play_vlc">Play in VLC</string>
+    <string name="vlc_not_installed">VLC is not available</string>
+    <string name="views">views</string>
+    <string name="are_you_sure_delete">Are you sure to delete this item ?</string>
+    <string name="no">No</string>
 </resources>

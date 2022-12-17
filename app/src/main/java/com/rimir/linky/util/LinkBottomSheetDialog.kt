@@ -1,19 +1,17 @@
 package com.rimir.linky.util
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.util.Log
+import android.content.*
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rimir.linky.R
 import com.rimir.linky.data.Link
 import com.rimir.linky.databinding.BottomSheetDialogBinding
 import java.net.URL
+
 
 object LinkBottomSheetDialog {
 
@@ -69,14 +67,35 @@ object LinkBottomSheetDialog {
         val host: String = url.getHost()
 
         if (fileMedia.contains(URLSUtils.getExtension(link.url).lowercase())) {
+            dialogBinding.previewLink.visibility = View.GONE
             dialogBinding.downloadLink.visibility = View.VISIBLE
             dialogBinding.playLink.visibility = View.VISIBLE
+            dialogBinding.playLinkVlc.visibility = View.VISIBLE
             dialogBinding.playLink.setOnClickListener {
+                AudioBottomSheetDialog.launch(activity, link)
+            }
+            dialogBinding.playLinkVlc.setOnClickListener {
+                try {
+                    val i = Intent(Intent.ACTION_MAIN)
+                    i.component = ComponentName(
+                        "com.vlcdirect.vlcdirect",
+                        "com.vlcdirect.vlcdirect.URLStreamerActivity"
+                    )
+                    i.putExtra("url", link.url)
+                    activity.startActivity(i)
+                } catch (ex: Exception) {
+                    Toast.makeText(
+                        activity.getApplicationContext(),
+                        activity.resources.getString(R.string.vlc_not_installed),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
 
             }
         } else if (webMedia.contains(host)) {
 
             dialogBinding.playLink.visibility = View.VISIBLE
+
             dialogBinding.playLink.setOnClickListener {
                 YoutubeBottomSheetDialog.launch(activity, link)
             }
