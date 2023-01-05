@@ -98,4 +98,26 @@
     <string name="views">views</string>
     <string name="are_you_sure_delete">Are you sure to delete this item ?</string>
     <string name="no">No</string>
+    <string name="theme">Theme</string>
+    <string name="systeme">System</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="language">Language</string>
+    <string name="french">French</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="legal">Terms and conditions</string>
+    <string name="les_termes_et_conditions_d_utilisation">the terms and conditions of use.</string>
+    <string name="optimize_app">Optimize the app (clear cache)</string>
+    <string name="fonctionality">Fonctionality</string>
+    <string name="data">Data</string>
+    <string name="clear_cach">Do you want to clear the app cache ?</string>
+    <string name="yes">Yes</string>
+    <string name="clear_links">Clear all links</string>
+    <string name="cache_cleard">Cache cleared succesfully</string>
+    <string name="clear_all_links">Do you want to clear all the links ?</string>
+    <string name="links_cleared">All links cleared</string>
+    <string name="folder_color">Folder color</string>
+    <string name="add_folder">Add folder</string>
+    <string name="scan_qr_code">Scan QR code</string>
 </resources>

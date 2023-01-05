@@ -34,7 +34,7 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/link_empty_lottie"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen200dp"
+        android:layout_height="100dp"
         android:layout_above="@id/link_empty_text"
         android:visibility="gone"
         app:lottie_autoPlay="true"
@@ -48,7 +48,7 @@
         android:layout_centerVertical="true"
         android:gravity="center"
         android:fontFamily="@font/open_sans"
-        android:text="@string/message_links_empty"
+        android:text="@string/no_links"
         android:textColor="@color/dark_sky"
         android:textSize="@dimen/dimen20sp"
         android:textStyle="bold|italic"

@@ -25,8 +25,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import android.content.DialogInterface
 
-import android.R.attr.name
 import android.app.AlertDialog
+import com.rimir.linky.ui.bottomsheets.LinkBottomSheetDialog
 
 
 @AndroidEntryPoint
@@ -105,6 +105,9 @@ class HomeFragment : Fragment() {
         val visibility = if (isOptionsButtonClicked) View.INVISIBLE else View.VISIBLE
         val animation = if (isOptionsButtonClicked) rotateClose else rotateOpen
         isOptionsButtonClicked = isOptionsButtonClicked.not()
+
+        binding.qrCodeOption.visibility = visibility
+        binding.qrCodeOption.isClickable = isOptionsButtonClicked
 
         binding.addLinkOption.visibility = visibility
         binding.addLinkOption.isClickable = isOptionsButtonClicked
@@ -235,7 +238,7 @@ class HomeFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.setting_action -> {
-                //findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
+                findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
                 true
             }
             else -> super.onOptionsItemSelected(item)

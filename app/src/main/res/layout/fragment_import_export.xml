@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
     tools:context=".ui.importexport.ImportExportFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/logo_image"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen300dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:contentDescription="@string/import_export"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        android:layout_marginBottom="50dp"
         app:lottie_rawRes="@raw/file_imported" />
 
     <LinearLayout
@@ -31,20 +33,20 @@
             android:id="@+id/import_action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen5dp"
-            android:padding="@dimen/dimen5dp"
+            android:layout_margin="@dimen/dimen20dp"
+            android:padding="@dimen/dimen10dp"
             android:text="@string/imports"
             android:textAllCaps="false"
-            android:textColor="@color/sky" />
+            android:textColor="@color/white" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/export_action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen5dp"
-            android:padding="@dimen/dimen5dp"
+            android:layout_margin="@dimen/dimen20dp"
+            android:padding="@dimen/dimen10dp"
             android:text="@string/export"
             android:textAllCaps="false"
-            android:textColor="@color/sky" />
+            android:textColor="@color/white" />
     </LinearLayout>
 </RelativeLayout>

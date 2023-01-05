@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.rimir.linky.R
 import com.rimir.linky.data.Folder
+import com.rimir.linky.databinding.ListItemFolderArrayBinding
 import com.rimir.linky.databinding.ListItemFolderBinding
 
-private const val layoutID = R.layout.list_item_folder
+private const val layoutID = R.layout.list_item_folder_array
 
 class FolderArrayAdapter(
     context: Context,
@@ -17,7 +18,7 @@ class FolderArrayAdapter(
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(layoutID, parent, false)
-        val binding = ListItemFolderBinding.bind(view)
+        val binding = ListItemFolderArrayBinding.bind(view)
         val folder = getItem(position)
         if(folder != null) {
             binding.folderNameTxt.text = folder.name

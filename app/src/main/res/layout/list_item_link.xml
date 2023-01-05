@@ -71,7 +71,7 @@
             android:layout_margin="@dimen/dimen2dp"
             android:contentDescription="@string/pinned"
             android:padding="@dimen/dimen2dp"
-            android:src="@drawable/ic_pinned" />
+            android:src="@drawable/ic_favourite" />
     </RelativeLayout>
 
     <View

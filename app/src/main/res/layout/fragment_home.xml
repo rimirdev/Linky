@@ -14,10 +14,128 @@
             android:layout_height="wrap_content"
             tools:context=".ui.home.HomeFragment">
 
+            <RelativeLayout
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/topInfos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cuistoTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/open_sans_titles"
+                        android:text="@string/app_name"
+                        android:textColor="@color/sky"
+                        android:textSize="32sp"
+                        android:visibility="visible"></TextView>
+
+                    <TextView
+                        android:id="@+id/bonjour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|start"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Hello"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone"></TextView>
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|start"
+                        android:fontFamily="@font/open_sans_titles"
+                        android:text="Ryad"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+
+                        ></TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/searchLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/circled_grey_layou">
+
+                        <ImageView
+                            android:id="@+id/search"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_margin="10dp"
+                            android:background="?selectableItemBackground"
+                            android:padding="2dp"
+                            android:src="@drawable/ic_search" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/notifLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:backgroundTint="@color/white_smoke"
+                        app:cardCornerRadius="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?android:selectableItemBackground">
+
+                            <ImageView
+                                android:id="@+id/notification"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:src="@drawable/ic_settings" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
             <TextView
                 android:id="@+id/folder_header_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/topbar"
                 android:layout_marginStart="@dimen/dimen10dp"
                 android:layout_marginTop="@dimen/dimen10dp"
                 android:layout_marginEnd="@dimen/dimen10dp"
@@ -26,7 +144,7 @@
                 android:padding="@dimen/dimen5dp"
                 android:text="@string/folders"
                 android:textColor="@color/sky"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 tools:ignore="RelativeOverlap" />
 
             <ImageView
@@ -60,7 +178,7 @@
                 android:padding="@dimen/dimen5dp"
                 android:text="@string/links"
                 android:textColor="@color/sky"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/links_count"
@@ -89,8 +207,11 @@
                 android:id="@+id/link_empty_lottie"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_margin="@dimen/dimen30dp"
                 android:layout_below="@id/link_header"
+                android:layout_marginStart="@dimen/dimen30dp"
+                android:layout_marginTop="@dimen/dimen30dp"
+                android:layout_marginEnd="@dimen/dimen30dp"
+                android:layout_marginBottom="@dimen/dimen30dp"
                 android:visibility="gone"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
@@ -112,12 +233,25 @@
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/qr_code_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/add_link_option"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dimen16dp"
+        android:contentDescription="@string/scan_qr_code"
+        android:src="@drawable/ic_qr_code"
+        android:visibility="gone"
+        app:backgroundTint="@color/sky" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_link_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/add_folder_option"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/dimen16dp"
+        android:layout_marginTop="@dimen/dimen16dp"
         android:contentDescription="@string/add_link_option"
         android:src="@drawable/ic_link"
         android:visibility="gone"

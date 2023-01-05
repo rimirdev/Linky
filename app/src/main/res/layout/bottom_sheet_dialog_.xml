@@ -12,15 +12,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:src="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <TextView
             android:id="@+id/preview_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:drawablePadding="@dimen/dimen5dp"
             android:padding="@dimen/dimen20dp"
             android:text="@string/preview"
-            android:clickable="true"
-            android:background="?selectableItemBackground"
             android:textColor="@color/dark_sky"
             app:drawableStartCompat="@drawable/ic_preview" />
 
@@ -28,10 +40,10 @@
             android:id="@+id/play_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:drawablePadding="@dimen/dimen5dp"
             android:padding="@dimen/dimen20dp"
-            android:clickable="true"
-            android:background="?selectableItemBackground"
             android:text="@string/play_media"
             android:textColor="@color/dark_sky"
             android:visibility="gone"
@@ -41,37 +53,37 @@
             android:id="@+id/play_link_vlc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:drawablePadding="@dimen/dimen5dp"
             android:padding="@dimen/dimen20dp"
-            android:clickable="true"
-            android:background="?selectableItemBackground"
             android:text="@string/play_vlc"
             android:textColor="@color/dark_sky"
             android:visibility="gone"
             app:drawableStartCompat="@drawable/ic_vlc" />
+
         <TextView
             android:id="@+id/download_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:drawablePadding="@dimen/dimen5dp"
             android:padding="@dimen/dimen20dp"
-            android:clickable="true"
-            android:background="?selectableItemBackground"
             android:text="@string/download"
             android:textColor="@color/dark_sky"
             android:visibility="gone"
             app:drawableStartCompat="@drawable/ic_download" />
 
 
-
         <TextView
             android:id="@+id/dialog_open_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:drawablePadding="@dimen/dimen5dp"
             android:padding="@dimen/dimen20dp"
-            android:clickable="true"
-            android:background="?selectableItemBackground"
             android:text="@string/open_in_browser"
             android:textColor="@color/dark_sky"
             app:drawableStartCompat="@drawable/ic_open_in_browser" />
@@ -80,10 +92,10 @@
             android:id="@+id/dialog_copy_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:drawablePadding="@dimen/dimen5dp"
             android:padding="@dimen/dimen20dp"
-            android:clickable="true"
-            android:background="?selectableItemBackground"
             android:text="@string/copy"
             android:textColor="@color/dark_sky"
             app:drawableStartCompat="@drawable/ic_copy" />
@@ -92,9 +104,9 @@
             android:id="@+id/dialog_share_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/dimen10dp"
-            android:clickable="true"
             android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:drawablePadding="@dimen/dimen10dp"
             android:padding="@dimen/dimen20dp"
             android:text="@string/share"
             android:textColor="@color/dark_sky"

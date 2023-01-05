@@ -1,9 +1,8 @@
-package com.rimir.linky.util
+package com.rimir.linky.ui.bottomsheets
 
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
-import android.webkit.*
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener

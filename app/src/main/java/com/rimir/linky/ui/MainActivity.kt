@@ -1,12 +1,14 @@
 package com.rimir.linky.ui
 
+import android.app.ActionBar
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import com.rimir.linky.R
 import com.rimir.linky.data.Theme
@@ -17,6 +19,7 @@ import com.rimir.linky.util.findNavHostController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.sky);
 
         setContentView(R.layout.activity_main)
 

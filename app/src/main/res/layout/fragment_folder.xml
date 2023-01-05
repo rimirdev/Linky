@@ -16,15 +16,30 @@
             <ImageView
                 android:id="@+id/folder_logo"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:contentDescription="@string/link_title"
-                android:layout_marginBottom="50dp"
                 android:src="@drawable/ic_folders" />
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/folder_logo"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/dimen10dp"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginEnd="@dimen/dimen10dp"
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:fontFamily="@font/open_sans_titles"
+                android:text="@string/add_folder"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimen18sp"></TextView>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/folder_title_layout"
                 style="@style/TextInputLayoutStyle"
-                android:layout_below="@id/folder_logo"
+                android:layout_below="@id/title"
                 android:layout_margin="@dimen/dimen10dp"
                 android:hint="@string/folder_name"
                 app:counterEnabled="true"
@@ -40,21 +55,40 @@
                     android:maxLength="30" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.rimir.linky.ui.view.ColorSelector
-                android:id="@+id/folder_color_selector"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/folder_container"
+                android:gravity="center"
                 android:layout_below="@+id/folder_title_layout"
-                android:layout_centerHorizontal="true" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackground"
+                    android:text="@string/folder_color"
+                    android:textSize="@dimen/dimen18sp"
+                    android:textColor="@color/black"
+                    />
+
+                <com.rimir.linky.ui.view.ColorSelector
+                    android:id="@+id/folder_color_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/folder_pinned_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/folder_color_selector"
-                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/folder_container"
                 android:checked="false"
+                android:layout_centerInParent="true"
                 android:text="@string/pinned"
+                app:switchPadding="@dimen/dimen10dp"
                 android:textSize="@dimen/dimen18sp"
                 app:thumbTint="@color/sky"
                 app:trackTint="@color/grey" />

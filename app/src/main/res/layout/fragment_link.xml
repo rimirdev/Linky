@@ -16,14 +16,30 @@
         <ImageView
             android:id="@+id/link_logo"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:contentDescription="@string/link_title"
             android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/link_logo"
+            android:layout_margin="@dimen/dimen10dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp"
+            android:fontFamily="@font/open_sans_titles"
+            android:text="@string/add_link"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen18sp"></TextView>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/link_title_layout"
             style="@style/TextInputLayoutStyle"
-            android:layout_below="@id/link_logo"
+            android:layout_below="@id/title"
             android:hint="@string/link_title"
             app:startIconDrawable="@drawable/ic_pen">
 

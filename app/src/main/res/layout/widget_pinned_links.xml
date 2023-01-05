@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/appWidgetBackgroundColor"
+    android:background="@color/white"
     android:padding="@dimen/dimen0dp"
     android:theme="@style/ThemeOverlay.LinkHub.AppWidgetContainer"
     tools:viewBindingIgnore="true">
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:fontFamily="@font/open_sans"
         android:gravity="center"
-        android:text="@string/message_links_empty"
+        android:text="@string/no_links"
         android:textColor="@color/sky"
-        android:textSize="@dimen/dimen20sp" />
+        android:textSize="@dimen/dimen12sp" />
 </FrameLayout>

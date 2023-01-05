@@ -84,4 +84,9 @@ class HomeViewModel @Inject constructor(
             _linkLiveData.value?.toMutableList()?.remove(link)
         }
     }
+    fun deleteAll() {
+        viewModelScope.launch {
+            linkRepository.deleteAll()
+        }
+    }
 }

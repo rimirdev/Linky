@@ -1,4 +1,4 @@
-package com.rimir.linky.util
+package com.rimir.linky.ui.bottomsheets
 
 import android.app.Activity
 import android.app.DownloadManager
@@ -15,6 +15,7 @@ import com.islamdidarmd.adblockerwebview.AdBlockerUtil
 import com.rimir.linky.R
 import com.rimir.linky.data.Link
 import com.rimir.linky.databinding.PreviewBottomSheetDialogBinding
+import com.rimir.linky.util.URLS
 
 object PreviewBottomSheetDialog {
 

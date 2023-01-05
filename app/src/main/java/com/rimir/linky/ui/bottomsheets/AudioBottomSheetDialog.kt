@@ -1,22 +1,18 @@
-package com.rimir.linky.util
+package com.rimir.linky.ui.bottomsheets
 
 import android.app.Activity
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
-import android.webkit.*
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.rimir.linky.R
 import com.rimir.linky.data.Link
 import com.rimir.linky.databinding.AudioBottomSheetDialogBinding
-import com.rimir.linky.databinding.YoutubeBottomSheetDialogBinding
 
 
 object AudioBottomSheetDialog {

@@ -19,8 +19,8 @@ fun Activity?.showSnackBar(message: Int) {
     this ?: return
     val snackBar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG)
     snackBar.apply {
-        setTextColor(ContextCompat.getColor(context, R.color.sky))
-        setBackgroundTint(ContextCompat.getColor(context, R.color.dark_sky))
+        setTextColor(ContextCompat.getColor(context, R.color.white))
+        setBackgroundTint(ContextCompat.getColor(context, R.color.sky))
         show()
     }
 }

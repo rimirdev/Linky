@@ -1,15 +1,15 @@
-package com.rimir.linky.util
+package com.rimir.linky.ui.bottomsheets
 
 import android.app.Activity
 import android.content.*
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rimir.linky.R
 import com.rimir.linky.data.Link
 import com.rimir.linky.databinding.BottomSheetDialogBinding
+import com.rimir.linky.util.*
 import java.net.URL
 
 

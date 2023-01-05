@@ -3,7 +3,7 @@ package com.rimir.linky.util
 import android.content.Context
 import com.rimir.linky.data.Theme
 
-private const val SETTINGS_PREFERENCE_NAME = "linkhub_settings"
+private const val SETTINGS_PREFERENCE_NAME = "linky_settings"
 private const val SETTINGS_THEME_KEY = "theme"
 private const val SETTINGS_COUNTER_KEY = "counter"
 
