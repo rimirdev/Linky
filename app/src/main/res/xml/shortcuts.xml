@@ -25,4 +25,17 @@
             android:targetClass="com.rimir.linky.ui.MainActivity"
             android:targetPackage="com.rimir.linky" />
     </shortcut>
+
+    <!--Scan QR code shortcut-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_qr_code"
+        android:shortcutId="scan_qr"
+        android:shortcutLongLabel="@string/scan_qr_code"
+        android:shortcutShortLabel="@string/scan_qr_code">
+        <intent
+            android:action="com.rimir.linky.action.create_link"
+            android:targetClass="com.rimir.linky.ui.qrcode.QrCodeActivity"
+            android:targetPackage="com.rimir.linky" />
+    </shortcut>
 </shortcuts>

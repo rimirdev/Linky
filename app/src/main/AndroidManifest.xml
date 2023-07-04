@@ -16,13 +16,24 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LinkHub">
-
+        android:theme="@style/Theme.Linky">
+        <activity
+            android:name=".ui.qrcode.QrCodeActivity"
+            android:exported="true"
+            android:stateNotNeeded="false"
+            android:theme="@style/Theme.Linky"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.qrcode.CaptureActivityPortrait"
+            android:exported="true"
+            android:stateNotNeeded="false"
+            android:theme="@style/Theme.Linky"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.LinkHub"
+            android:theme="@style/Theme.Linky"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,9 +63,7 @@
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
-        </activity>
-
-        <!-- Widget receiver -->
+        </activity> <!-- Widget receiver -->
         <receiver
             android:name="com.rimir.linky.ui.widget.PinnedLinksWidget"
             android:exported="true">
@@ -65,9 +74,7 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/pinned_links_widget_info" />
-        </receiver>
-
-        <!-- Widget Service -->
+        </receiver> <!-- Widget Service -->
         <service
             android:name="com.rimir.linky.ui.widget.PinnedLinksWidgetService"
             android:exported="true"

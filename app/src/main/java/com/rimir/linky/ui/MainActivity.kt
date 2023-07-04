@@ -1,11 +1,9 @@
 package com.rimir.linky.ui
 
-import android.app.ActionBar
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -33,11 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        handleLinkHubIntent()
+        handleLinkyIntent()
         handleMultiThemeOption()
     }
 
-    private fun handleLinkHubIntent() {
+    private fun handleLinkyIntent() {
         when (intent.action) {
             Intent.ACTION_VIEW -> return
             Intent.ACTION_SEND -> {
@@ -48,13 +46,22 @@ class MainActivity : AppCompatActivity() {
             }
             Intent.ACTION_PROCESS_TEXT -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    val sharedLink =
-                        intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
-                    val bundle = bundleOf("shared_link" to sharedLink)
-                    findNavHostController(R.id.nav_host_fragment).navigate(
-                        R.id.linkFragment,
-                        bundle
-                    )
+                    var bundleQR = intent.extras!!
+                    if (bundleQR.getString("shared_link")?.isNotEmpty()!!) {
+                        findNavHostController(R.id.nav_host_fragment).navigate(
+                            R.id.linkFragment,
+                            bundleQR
+                        )
+
+                    } else {
+                        val sharedLink =
+                            intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString()
+                        var bundle = bundleOf("shared_link" to sharedLink)
+                        findNavHostController(R.id.nav_host_fragment).navigate(
+                            R.id.linkFragment,
+                            bundle
+                        )
+                    }
                 }
             }
             ACTION_CREATE_LINK -> {

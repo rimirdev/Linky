@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.rimir.linky"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
@@ -72,6 +72,7 @@ dependencies {
     // Room Database
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
 
     // Coroutines
@@ -131,4 +132,8 @@ dependencies {
     // firebase
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation 'com.google.firebase:firebase-analytics'
+
+    // QR code
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
 }

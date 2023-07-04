@@ -26,7 +26,9 @@ import javax.inject.Inject
 import android.content.DialogInterface
 
 import android.app.AlertDialog
+import android.content.Intent
 import com.rimir.linky.ui.bottomsheets.LinkBottomSheetDialog
+import com.rimir.linky.ui.qrcode.QrCodeActivity
 
 
 @AndroidEntryPoint
@@ -98,6 +100,11 @@ class HomeFragment : Fragment() {
 
         binding.addFolderOption.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_folderFragment)
+        }
+
+        binding.qrCodeOption.setOnClickListener {
+            val intent = Intent(context, QrCodeActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -228,7 +235,7 @@ class HomeFragment : Fragment() {
 
         val menuItem = menu.findItem(R.id.search_action)
         val searchView = menuItem?.actionView as SearchView
-        searchView.queryHint = "Search keyword"
+        searchView.queryHint = getString(R.string.search_keyword)
         searchView.setIconifiedByDefault(true)
         searchView.setOnQueryTextListener(searchViewQueryListener)
 

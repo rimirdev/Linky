@@ -131,4 +131,5 @@
     <string name="folder_color">Folder color</string>
     <string name="add_folder">Add folder</string>
     <string name="scan_qr_code">Scan QR code</string>
+    <string name="search_keyword">Search keyword</string>
 </resources>
