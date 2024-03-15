@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.6.0">
+  <library name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.6.0" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://D:/Android/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions-runtime/1.6.0/fce6d22d4151652de3f79b2a4cf937bb52393fbc/kotlin-android-extensions-runtime-1.6.0.jar!/" />
     </CLASSES>

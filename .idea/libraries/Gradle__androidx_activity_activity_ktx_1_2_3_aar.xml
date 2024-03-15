@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.activity:activity-ktx:1.2.3@aar">
+  <library name="Gradle: androidx.activity:activity-ktx:1.2.3@aar" external-system-id="GRADLE">
     <CLASSES>
       <root url="file://D:/Android/.gradle/caches/transforms-3/50ed00caeca4be12bad2029fbf879b5e/transformed/activity-ktx-1.2.3/AndroidManifest.xml" />
       <root url="jar://D:/Android/.gradle/caches/transforms-3/50ed00caeca4be12bad2029fbf879b5e/transformed/activity-ktx-1.2.3/jars/classes.jar!/" />

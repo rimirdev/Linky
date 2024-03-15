@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.google.truth:truth:1.0.1">
+  <library name="Gradle: com.google.truth:truth:1.0.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://D:/Android/.gradle/caches/modules-2/files-2.1/com.google.truth/truth/1.0.1/361459309085bd9441cb97b62f160e8b353a93c0/truth-1.0.1.jar!/" />
     </CLASSES>

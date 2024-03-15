@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.journeyapps:zxing-android-embedded:4.2.0@aar">
+  <library name="Gradle: com.journeyapps:zxing-android-embedded:4.2.0@aar" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://D:/Android/.gradle/caches/transforms-3/c91f70764fa909039a166ff661e059b0/transformed/zxing-android-embedded-4.2.0/jars/classes.jar!/" />
       <root url="file://D:/Android/.gradle/caches/transforms-3/c91f70764fa909039a166ff661e059b0/transformed/zxing-android-embedded-4.2.0/res" />

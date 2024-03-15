@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+    <entry>
+        <key>live</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>maintenance</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>update</key>
+        <value>false</value>
+    </entry>
+</defaults>

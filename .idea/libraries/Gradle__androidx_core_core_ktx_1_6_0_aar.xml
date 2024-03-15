@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.core:core-ktx:1.6.0@aar">
+  <library name="Gradle: androidx.core:core-ktx:1.6.0@aar" external-system-id="GRADLE">
     <CLASSES>
       <root url="file://D:/Android/.gradle/caches/transforms-3/cab106820979a31baa14de5db778914a/transformed/core-ktx-1.6.0/res" />
       <root url="jar://D:/Android/.gradle/caches/transforms-3/cab106820979a31baa14de5db778914a/transformed/core-ktx-1.6.0/jars/classes.jar!/" />

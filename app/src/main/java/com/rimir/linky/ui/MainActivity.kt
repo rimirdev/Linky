@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 findNavHostController(R.id.nav_host_fragment).navigate(R.id.linkFragment, bundle)
                 return
             }
+
             Intent.ACTION_PROCESS_TEXT -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     var bundleQR = intent.extras!!
@@ -64,9 +66,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
             ACTION_CREATE_LINK -> {
                 findNavHostController(R.id.nav_host_fragment).navigate(R.id.linkFragment)
             }
+
             ACTION_CREATE_FOLDER -> {
                 findNavHostController(R.id.nav_host_fragment).navigate(R.id.folderFragment)
             }

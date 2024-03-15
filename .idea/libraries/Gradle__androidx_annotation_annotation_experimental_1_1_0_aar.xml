@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.annotation:annotation-experimental:1.1.0@aar">
+  <library name="Gradle: androidx.annotation:annotation-experimental:1.1.0@aar" external-system-id="GRADLE">
     <CLASSES>
       <root url="file://D:/Android/.gradle/caches/transforms-3/7745ce635adb368092362fcbd2bcdf00/transformed/annotation-experimental-1.1.0/res" />
       <root url="file://D:/Android/.gradle/caches/transforms-3/7745ce635adb368092362fcbd2bcdf00/transformed/annotation-experimental-1.1.0/AndroidManifest.xml" />

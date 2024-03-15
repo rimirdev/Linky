@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.google.dagger:hilt-android:2.39.1@aar">
+  <library name="Gradle: com.google.dagger:hilt-android:2.39.1@aar" external-system-id="GRADLE">
     <CLASSES>
       <root url="file://D:/Android/.gradle/caches/transforms-3/db98d84d62fd6d36fc384561d92d11e3/transformed/hilt-android-2.39.1/AndroidManifest.xml" />
       <root url="jar://D:/Android/.gradle/caches/transforms-3/db98d84d62fd6d36fc384561d92d11e3/transformed/hilt-android-2.39.1/jars/classes.jar!/" />

@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.google.android.gms:play-services-ads-identifier:18.0.0@aar">
+  <library name="Gradle: com.google.android.gms:play-services-ads-identifier:18.0.0@aar" external-system-id="GRADLE">
     <CLASSES>
       <root url="file://D:/Android/.gradle/caches/transforms-3/3898742bb18d2aa9cffd30445b322595/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml" />
       <root url="jar://D:/Android/.gradle/caches/transforms-3/3898742bb18d2aa9cffd30445b322595/transformed/play-services-ads-identifier-18.0.0/jars/classes.jar!/" />
